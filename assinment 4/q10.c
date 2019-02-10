@@ -1,22 +1,23 @@
 #include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+
 int main()
 {
-    char s[10];int i=0,j=0;
+    char s[10],c,s1[10];
+int i=0,j=0;
+printf("enter characters to delete");
+scanf("%c",&c);
     scanf("%s",s);
-    for( i=0;i<strlen(s);i++)
-    {
-        for( j=i;j<strlen(s);j++)
-      printf("%c",s[j]);
-      for(int j1=0;j1<i;j1++)
-      printf("%c",s[j1]);
-    
-        printf("\n");
+while(s[i]!='\0')
+{
+if(s[i]!=c)
+    { 
+       
+        s1[j]=s[i];
+        j++;
     }
-	//printf("%s",s);
-
-	
-
+    i++;
+}s1[j]='\0';
+printf("\n %s",s1);
+    
 	return 0;
 }
