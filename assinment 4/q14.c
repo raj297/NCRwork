@@ -14,7 +14,7 @@ int main()
     
         printf("\n");
     }
-	//printf("%s",s);
+	//...printf("%s",s);
 
 	
 
