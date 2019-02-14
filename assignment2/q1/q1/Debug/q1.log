@@ -1,5 +1,0 @@
-﻿  Source2.c
-  Source1.c
-  Generating Code...
-Source2.obj : error LNK2005: _main already defined in Source1.obj
-C:\Users\cdac\Desktop\ass2\q1\Debug\q1.exe : fatal error LNK1169: one or more multiply defined symbols found
