@@ -1,0 +1,4 @@
+﻿  Source.cpp
+c:\users\cdac\source\repos\fafamummy999\ncrwork\cassignment\ass2\project4\source.cpp(29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Project4.vcxproj -> C:\Users\cdac\Source\Repos\fafamummy999\NCRwork\cassignment\ass2\Project4\Debug\Project4.exe
+  Project4.vcxproj -> C:\Users\cdac\Source\Repos\fafamummy999\NCRwork\cassignment\ass2\Project4\Debug\Project4.pdb (Partial PDB)
