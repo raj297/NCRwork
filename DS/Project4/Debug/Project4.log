@@ -1,0 +1,4 @@
+﻿  Source.cpp
+c:\users\cdac\source\repos\raj297\ncrwork\ds\project4\source.cpp(57): warning C4715: 's::getPrio': not all control paths return a value
+  Project4.vcxproj -> C:\Users\cdac\Source\Repos\raj297\NCRwork\DS\Project4\Debug\Project4.exe
+  Project4.vcxproj -> C:\Users\cdac\Source\Repos\raj297\NCRwork\DS\Project4\Debug\Project4.pdb (Partial PDB)
