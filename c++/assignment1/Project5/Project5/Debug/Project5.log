@@ -1,0 +1,6 @@
+﻿  Source.cpp
+c:\users\manikant\desktop\ncrwork\c++\assignment1\project5\project5\source.cpp(62): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\manikant\desktop\ncrwork\c++\assignment1\project5\project5\source.cpp(63): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\manikant\desktop\ncrwork\c++\assignment1\project5\project5\source.cpp(69): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\manikant\desktop\ncrwork\c++\assignment1\project5\project5\source.cpp(70): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Project5.vcxproj -> C:\Users\MANIKANT\Desktop\NCRwork\c++\assignment1\Project5\Debug\Project5.exe
