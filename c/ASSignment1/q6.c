@@ -12,7 +12,7 @@ void main()
 			a[i] = num % 2;
 			num = num/2;
 		}
-		i = 4;
+		
 		while (a[i] == 0)
 			i--;
 		for (j = i;j >= 0;j--)
@@ -22,6 +22,6 @@ void main()
 
 	}
 	else
-		printf("Num is greater than 31");
+		printf(" greater than 31");
 	getch();
 }
