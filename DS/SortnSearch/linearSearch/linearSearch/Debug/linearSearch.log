@@ -1,0 +1,10 @@
+﻿  Source.cpp
+c:\users\manikant\desktop\ncrwork\ds\sortnsearch\linearsearch\linearsearch\source.cpp(52): error C2146: syntax error: missing ';' before identifier 'ob'
+c:\users\manikant\desktop\ncrwork\ds\sortnsearch\linearsearch\linearsearch\source.cpp(52): warning C4551: function call missing argument list
+c:\users\manikant\desktop\ncrwork\ds\sortnsearch\linearsearch\linearsearch\source.cpp(52): error C2065: 'ob': undeclared identifier
+c:\users\manikant\desktop\ncrwork\ds\sortnsearch\linearsearch\linearsearch\source.cpp(53): error C2065: 'ob': undeclared identifier
+c:\users\manikant\desktop\ncrwork\ds\sortnsearch\linearsearch\linearsearch\source.cpp(54): error C2065: 'ob': undeclared identifier
+c:\users\manikant\desktop\ncrwork\ds\sortnsearch\linearsearch\linearsearch\source.cpp(58): error C2065: 'ob': undeclared identifier
+c:\users\manikant\desktop\ncrwork\ds\sortnsearch\linearsearch\linearsearch\source.cpp(59): error C2065: 'ob': undeclared identifier
+c:\users\manikant\desktop\ncrwork\ds\sortnsearch\linearsearch\linearsearch\source.cpp(52): error C4996: 'lsearch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _lsearch. See online help for details.
+  c:\program files\windows kits\10\include\10.0.17763.0\ucrt\corecrt_search.h(200): note: see declaration of 'lsearch'
