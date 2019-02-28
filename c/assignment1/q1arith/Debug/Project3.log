@@ -1,0 +1,9 @@
+﻿  Source.c
+c:\users\cdac\desktop\project3\source.c(9): warning C4013: 'add' undefined; assuming extern returning int
+c:\users\cdac\desktop\project3\source.c(11): warning C4013: 'sub' undefined; assuming extern returning int
+c:\users\cdac\desktop\project3\source.c(13): warning C4013: 'mul' undefined; assuming extern returning int
+mul.obj : error LNK2005: _add already defined in add.obj
+sub.obj : error LNK2005: _add already defined in add.obj
+Source.obj : error LNK2019: unresolved external symbol _sub referenced in function _main
+Source.obj : error LNK2019: unresolved external symbol _mul referenced in function _main
+C:\Users\cdac\Desktop\Project3\Debug\Project3.exe : fatal error LNK1120: 2 unresolved externals
