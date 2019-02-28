@@ -1,0 +1,2 @@
+﻿Source.obj : error LNK2019: unresolved external symbol "public: __thiscall list::~list(void)" (??1list@@QAE@XZ) referenced in function "void __cdecl add(class list,class list)" (?add@@YAXVlist@@0@Z)
+C:\Users\MANIKANT\Desktop\polySum\Debug\polySum.exe : fatal error LNK1120: 1 unresolved externals
