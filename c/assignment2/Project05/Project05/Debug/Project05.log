@@ -1,4 +1,0 @@
-﻿  Source.c
-c:\users\cdac\desktop\ass2\project05\project05\source.c(20): warning C4477: 'scanf_s' : format string '%d' requires an argument of type 'int *', but variadic argument 1 has type 'int'
-  Project05.vcxproj -> C:\Users\cdac\Desktop\ass2\Project05\Debug\Project05.exe
-  Project05.vcxproj -> C:\Users\cdac\Desktop\ass2\Project05\Debug\Project05.pdb (Partial PDB)
