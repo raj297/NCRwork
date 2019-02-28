@@ -1,7 +1,0 @@
-﻿  Source.cpp
-  Generating code
-c:\users\cdac\desktop\new folder\project1\project1\source.cpp(64): error C4700: uninitialized local variable 'cur' used
-  2 of 18 functions (11.1%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-LINK : fatal error LNK1257: code generation failed
