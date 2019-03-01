@@ -1,0 +1,8 @@
+﻿  Source.cpp
+c:\users\cdac\desktop\filereadwrite\source.cpp(17): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'TCHAR *'
+  c:\users\cdac\desktop\filereadwrite\source.cpp(17): note: consider using '%ls' in the format string
+  c:\users\cdac\desktop\filereadwrite\source.cpp(17): note: consider using '%lls' in the format string
+  c:\users\cdac\desktop\filereadwrite\source.cpp(17): note: consider using '%Ls' in the format string
+  c:\users\cdac\desktop\filereadwrite\source.cpp(17): note: consider using '%ws' in the format string
+  fileReadWrite.vcxproj -> C:\Users\cdac\Desktop\fileReadWrite\Debug\fileReadWrite.exe
+  fileReadWrite.vcxproj -> C:\Users\cdac\Desktop\fileReadWrite\Debug\fileReadWrite.pdb (Full PDB)
