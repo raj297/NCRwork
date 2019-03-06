@@ -1,0 +1,10 @@
+﻿  add.c
+c1 : fatal error C1083: Cannot open source file: '..\..\NCRwork\c\assignment1\q1arith\add.c': No such file or directory
+  mul.c
+c1 : fatal error C1083: Cannot open source file: '..\..\NCRwork\c\assignment1\q1arith\mul.c': No such file or directory
+  Source.c
+c1 : fatal error C1083: Cannot open source file: '..\..\NCRwork\c\assignment1\q1arith\Source.c': No such file or directory
+  sub.c
+c1 : fatal error C1083: Cannot open source file: '..\..\NCRwork\c\assignment1\q1arith\sub.c': No such file or directory
+  div.c
+  Generating Code...

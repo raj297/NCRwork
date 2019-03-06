@@ -1,0 +1,9 @@
+﻿  add.c
+  div.c
+  mul.c
+  Source.c
+c:\users\manikant\source\repos\ncrwork\rewrite\demo_calc\demo_calc\source.c(18): warning C4013: 'gets' undefined; assuming extern returning int
+c:\users\manikant\source\repos\ncrwork\rewrite\demo_calc\demo_calc\source.c(45): warning C4013: 'exit' undefined; assuming extern returning int
+  sub.c
+  Generating Code...
+  Demo_Calc.vcxproj -> C:\Users\MANIKANT\source\repos\NCRwork\reWrite\Demo_Calc\Debug\Demo_Calc.exe
