@@ -17,6 +17,7 @@ public:
 	bool isEmpty();
 	char pop();
 	char peek();
+	int getPrio(char ch);
 	void getsize(int, char*);
 	void display();
 };
@@ -29,6 +30,30 @@ s::s()
 	st.top = -1;
 	st.ptr = NULL;
 	st.size = 0;
+}
+int s::getPrio(char ch) {
+
+	switch (ch)
+	{
+	
+	case '/':
+		return 5;
+	case '*':
+		return 5;
+	case '+':
+		return 0;
+	case '-':
+		return 0;
+
+	case '(':
+		return -1;
+		break;
+	case ')':
+		return -1;
+		break;
+
+
+	}
 }
 void s::getsize(int n, char *str)
 {
@@ -80,49 +105,56 @@ int main()
 {
 	s obj;
 	int n;
-	char *str,ch;
-	str = new char[15];
+	char *str, ch;
+	str = new char[20];
 	cout << "enter the string" << endl;
 	cin >> str;
 	n = strlen(str);
 	obj.getsize(n, str);
-	
+
 	for (int i = 0;i < n;i++)
 	{
 		ch = str[i];
-		if (ch == '+' || ch == '-' || ch == '*' || ch == '/')
+		if (str[i] >= 'a'&&str[i] <= 'z')
+			cout << str[i];
+		else if (str[i] == '(')
+			obj.push(str[i]);
+		else
 		{
-
-			char op2 = obj.pop();
-			char op1 = obj.pop();
-			int res;
-			switch (ch)
+			if (obj.isEmpty())
 			{
-			case '+':
-				
-				res = (op1-48) +( op2 -  48);
-				
-				obj.push(res+48);
-				break;
-			case '-':res = (op1 - 48) - (op2 - 48);
-				obj.push(res + 48);
+				obj.push(ch);
+			}
+			else
+			{
+				char t;
+				t = obj.peek();
+				if (obj.getPrio(t) >=obj.getPrio(ch))
+				{
+					while (obj.getPrio(t) >= obj.getPrio(ch))
+					{
+						char po = obj.pop();
+						if (po != '('&& po != ')')
+							cout << po;
+						t = obj.peek();
+					}
+				}
+				else
+					obj.push(ch);
 
-				break;
-			case '*':res = (op1 - 48) * (op2 - 48);
-				obj.push(res + 48);
-				break;
-			case '/':res = (op1 - 48) / (op2 - 48);
-				obj.push(res + 48);
-				break;
+
 			}
 		}
-		else
-			obj.push(ch);
-		cout << endl<<"/./" << endl;
-		obj.display();
+
+	
 	}
-	cout << "res=";
-	obj.display();
+	
+	while (!obj.isEmpty())
+	{
+		char po = obj.pop();
+		if (po != '('&& po != ')')
+			cout << po;
+	}
 	getchar();
 	getchar();
 
