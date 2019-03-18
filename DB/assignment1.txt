@@ -1,0 +1,38 @@
+use cdac_ncr;
+/**/select * from emp;
+/*1*/ SELECT ename, sal FROM emp where sal between 18000 and 25000;
+/*2*/select ename ,deptno from emp order by deptno;
+/*3*/select distinct(job) from emp;
+/*4*/select * from emp where deptno in(1,4);
+/*5*/select  ename, job from emp where job like 'TECH';
+/*6*/select ename from emp where ename  like  ('%OO%') OR ename like ('%ON%');
+/*7*/select ename from emp where mgr is not NUll;
+/*8*/select ename ,sal,sal+isNUll(comm,0) 'total remuneration' from emp;
+/*9*/select ename,job,12*sal 'annual sal',isNull(comm,0) from emp where job like 'SALES I' order by ename, sal;
+/*10*/select ename+'_'+job 'EMP',sal*(115/100) 'SAL INCREMENTED BY 15%' from emp;
+/*11*/select concat(concat(ename,'_'),job) from emp;
+/*1 update emp set job='SALESPER' where empno in(select empno from emp where job='SALES I');*/
+/*12*/select min(sal) 'min sal',max(sal) 'max sal',job from emp group by job;
+/*13*/select count( distinct(mgr))+(select count(*) from emp where mgr is NULL) 'dist' from emp;
+/*14*/select avg(sal) 'avg sal',job from emp group by job;
+/*15*/select max(sal)-min(sal) 'diff' from emp;
+/*select empno,sal,deptno from emp where mgr=2 ;*/
+/*16*/select deptno from emp  group by deptno having count(empno)>=3; 
+/*17*/select 'yes' from emp having count(empno)-count(distinct(empno))=0;
+/*18*/
+select mgr from emp;
+select min(sal) 'salary',mgr from emp group by mgr order by salary; 
+select ename,sal,mgr from emp e where sal=(
+select min(sal) from emp where e.mgr=mgr ) and sal>18000;
+ 
+/*19*/select ename,dname  from emp,dept where emp.deptno=dept.deptno order by dname; 
+/*20*/select ename,emp.deptno,dname  from emp,dept where emp.deptno=dept.deptno order by dname; 
+/*21*/select ename,emp.deptno,loc  from emp,dept where emp.deptno=dept.deptno and emp.sal>15000 order by dname; 
+/*22*/
+/*23*/select ename,emp.deptno,loc  from emp,dept where emp.deptno=dept.deptno and dept.loc like 'SEATTLE' order by dname; 
+/*24*/select ename,job,sal,dept.dname,loc  from emp,dept where emp.deptno=dept.deptno and dept.dname not  like 'SALES' order by sal desc; 
+/*25*/select * from emp,dept where emp.deptno=dept.deptno and (sal>25000 or job='SALES');
+/*26 yet to do*/select deptno from dept group by deptno having deptno=(select count(*),emp.deptno  from emp group by emp.deptno having count(*)=0);
+ /*27 yet to do*/ select max(sal) 'salary',job from emp group by job order by salary;
+ /*28*/select ename,hiredate from emp e
+  where hiredate=(select min(hiredate) from emp group by dept where e.empno=e.empno);
