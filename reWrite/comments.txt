@@ -1,0 +1,268 @@
+//expansion of str;
+#define lenMax 25 //maximum length of the input string to expand
+#include <iostream>
+using namespace std;
+void expand(char *s1, char *s2);
+int checkInput(char *s);
+int sizetoExpand = 0;//updates on visiting a '-'
+int main() {
+	char *source_Str1, *expandsTo_Str2=NULL;
+	source_Str1 = new char[lenMax];
+     	    cout << "enter the string to expand"<<endl;
+		   cin>>(source_Str1);
+
+	int valid_Ret = checkInput(source_Str1);//input validation
+	if (valid_Ret)
+		expand(source_Str1, expandsTo_Str2);//call to expand 
+	else
+		cout << endl << "Invalid Input";
+	getchar();
+	getchar();
+	}
+	/*input validator*/
+int checkInput(char *source_Str1)
+{
+	int source_Itr = 0,expandFrom, expandTill,flag=0;
+	while (source_Str1[source_Itr++] != '\0')
+	sizetoExpand++;//inc sizetoExpand to length of source as it is min 
+	source_Itr = 0;
+	//checking if the source contains consecutive '-';
+	while(*(source_Str1+(source_Itr++))!='\0')
+	{
+	 	if (*(source_Str1 + (source_Itr)) == '-')
+	 	{
+	 	    flag=1;//check for atleast one '-'
+	 	    if(*(source_Str1+(source_Itr)+1)=='-')
+	 	    return 0;
+	 	}
+	}
+	if(flag==0)//check that no expansions req;
+	return 1;
+	source_Itr=0;
+	/*checking for correct input expansions*/
+	while (*(source_Str1 + source_Itr++) != '\0')
+	{
+		if (*(source_Str1 + source_Itr) == '-')
+		{
+
+			expandFrom = *(source_Str1 + source_Itr - 1);
+			expandTill = *(source_Str1 + source_Itr + 1);
+
+			if (isalpha(expandFrom) && isalpha(expandTill))
+			{
+				if ((islower(expandFrom) && islower(expandTill)) || (isupper(expandFrom) && isupper(expandTill)))
+				{
+					if (expandFrom < expandTill)
+					{
+						sizetoExpand =  sizetoExpand+expandTill-expandFrom;//calculating the size to expand by diff of ascii values
+					//cout<<sizetoExpand;
+						return 1;
+					}
+				}
+			}
+			else if (isdigit(expandFrom) && isdigit(expandTill))
+			{
+				if (expandFrom < expandTill)
+					return 1;
+			}
+			else
+				return 0;
+		}
+	}
+}
+//expansion function
+void expand(char *source_Str1, char *expandsTo_Str2)
+{
+	char expandFrom, expandTill, expands_Itr = 0, source_Itr = 0;
+	expandsTo_Str2 = new char[sizetoExpand];
+	while (*(source_Str1 + source_Itr) != '\0')
+	{
+		if (*(source_Str1 + source_Itr + 1) != '-')
+		{
+			*(expandsTo_Str2 + expands_Itr) = *(source_Str1 + source_Itr);
+			expands_Itr++;
+
+		}
+		if (*(source_Str1 + source_Itr) == '-')
+		{
+			expands_Itr--;
+			expandFrom = *(source_Str1+ source_Itr - 1);
+			expandTill = *(source_Str1 + source_Itr + 1);
+		
+			for (int for_Itr = expandFrom; for_Itr < expandTill; for_Itr++)
+			{
+				*(expandsTo_Str2 + expands_Itr) = (char)(for_Itr);
+				expands_Itr++;
+
+			}
+		}
+		source_Itr++;
+
+	}
+	expandsTo_Str2[expands_Itr+1] = '\0';
+	cout << "on expansion "<<expandsTo_Str2<<endl;
+}
+----------------------------------------------------------------------------
+//string fns
+#include<iostream>
+#define lenmax 10
+using namespace std;
+class allStringFns
+{
+public:
+	int len = lenmax;//used during dynaminc memeory allocation yo string
+	int stringlen(char *p);
+	void stringrev(char *str);
+	void stringcopy(char *s1, char *s2);
+    void stringconcat(char *s1, char *s2);
+   int stringcomp(char *s1, char *s2);
+   //wrapper to rev
+   void rev()
+   {
+	   char *str1; 
+	   str1 = new char[len];
+	   cout << "enter string 1" << endl;
+	   cin >> str1;
+	   stringrev(str1);
+   }
+   //wrapper to compare
+   void comp()
+   {
+	   char *str1, *str2;
+	   str1 = new char[len];
+	   cout << "enter string 1" << endl;
+	   cin >> str1;
+	   str2 = new char[len];
+	   cout << "enter string 2" << endl;
+	   cin >> str2;
+	   stringcomp(str1, str2);
+   }
+   //wrapper to concate
+   void concat()
+   {
+	   char *str1, *str2;
+	   str1 = new char[len];
+	   cout << "enter string 1" << endl;
+	   cin >> str1;
+	   str2 = new char[len];
+	   cout << "enter string 12" << endl;
+	   cin >> str2;
+	   stringconcat(str1, str2);
+   }
+   //wrapper to copy
+   void copy()
+   {
+	   char *str1, *str2; 
+	  // cout << "enter string 1 lenght" << endl;
+	 //  cin >> l;
+	   str1 = new char[len];
+	   cout << "enter string 1" << endl;
+	   cin >> str1;
+	   str2 = new char[stringlen(str1)];
+	   stringcopy(str2, str1);
+	   cout << str1;
+   }
+};
+//implementation of funtions
+int allStringFns:: stringlen(char *sourceItr) {
+	int count = 0;
+	for (/*no initialization as ierating on source */  ; *sourceItr != '\0'; sourceItr++)
+		count++;
+	return count;
+}
+void allStringFns:: stringrev(char *str) {
+
+	char *from_start, *from_end;
+	char temp;
+	for (from_start = str, from_end = str + stringlen(str) - 1; from_start < from_end; from_start++, from_end--) {
+		/*swaping start with end*/
+		temp = *from_start;
+		*from_start = *from_end;
+		*from_end = temp;
+	}
+	cout << endl << "reversed to" << str;
+}
+void allStringFns::stringcopy(char *dest, char *source) {
+
+	while (*source != '\0')
+	{
+		*dest++ = *source++;
+	}
+	cout << endl<<"copy sucessful copied  ::";
+}
+void  allStringFns::stringconcat(char *str1, char *str2) {
+
+	int i, j;//iterators
+	for (i = 0; str1[i] != '\0'; i++);
+	for (j = 0; str2[j] != '\0'; i++, j++) {
+		str1[i] = str2[j];
+	}
+	str1[i] = '\0';
+	cout <<endl<< "concatinated to " << str1;
+}
+int allStringFns:: stringcomp(char *str1, char *str2) {
+	int ret;
+	while (*str1 == *str2)
+	{
+		if (*str1 == '\0')
+		{
+			ret= *str1 - *str2;
+			break;
+		}str1++;
+		str2++;
+	}
+	ret=*str1 - *str2;
+	if (ret == 0)
+		cout <<endl<< "yes matched";
+	else
+		cout << endl << "Not matched";
+	return ret;
+}
+
+int main()
+{
+	allStringFns obj;
+	int choice;
+	while (1) {
+		cout <<endl<< "enter Your Choice" << endl;
+		cout << "1.String Compare" << endl;
+		cout << "2.String Concat" << endl;
+		cout << "3.String Reverse" << endl;
+		cout << "4.String Copy" << endl;
+		cout << "5.String len" << endl;
+		cout << "6.Exit" << endl;;
+		cin >> choice;
+
+		switch (choice)
+		{
+		case 1:
+			obj.comp();
+			break;
+
+		case 2:
+			obj.concat();
+			break;
+
+		case 3: obj.rev();
+			break;
+
+		case 4:obj.copy();
+			break;
+
+		case 5:char *str;
+			str = new char[lenmax];
+			cout << endl<<"enter the string"<<endl;
+			cin >> str;
+			cout<<endl<<"length=="<<obj.stringlen(str)<<endl;
+			break;
+
+		case 6:exit(1);
+			break;
+		default:cout << "enter the right choice!!!";
+			break;
+		}
+	}
+	getchar();
+	getchar();
+}
+-------------------------------------------------------------------------------
