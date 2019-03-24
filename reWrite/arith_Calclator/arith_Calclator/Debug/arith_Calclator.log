@@ -1,0 +1,12 @@
+﻿  Source.cpp
+c:\users\manikant\source\repos\arith_calclator\arith_calclator\infixtopostfix.h(31): warning C4018: '<': signed/unsigned mismatch
+c:\users\manikant\source\repos\arith_calclator\arith_calclator\postfixeval.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\manikant\source\repos\arith_calclator\arith_calclator\postfixeval.h(28): warning C4018: '<': signed/unsigned mismatch
+c:\users\manikant\source\repos\arith_calclator\arith_calclator\inputvalidation.h(7): warning C4101: 'e': unreferenced local variable
+c:\users\manikant\source\repos\arith_calclator\arith_calclator\inputvalidation.h(5): warning C4101: 'i': unreferenced local variable
+c:\users\manikant\source\repos\arith_calclator\arith_calclator\inputvalidation.h(66): warning C4018: '<': signed/unsigned mismatch
+c:\users\manikant\source\repos\arith_calclator\arith_calclator\inputvalidation.h(89): warning C4018: '<': signed/unsigned mismatch
+c:\users\manikant\source\repos\arith_calclator\arith_calclator\inputvalidation.h(98): warning C4018: '<': signed/unsigned mismatch
+c:\users\manikant\source\repos\arith_calclator\arith_calclator\infixtopostfix.h(23): warning C4715: 'GetPriority': not all control paths return a value
+c:\users\manikant\source\repos\arith_calclator\arith_calclator\postfixeval.h(21): warning C4715: 'operation': not all control paths return a value
+  arith_Calclator.vcxproj -> C:\Users\MANIKANT\source\repos\arith_Calclator\Debug\arith_Calclator.exe
